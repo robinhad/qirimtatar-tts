@@ -11,7 +11,7 @@ def test_latin_converter():
     cases = _read_test_cases()
     print(cases)
     for case in cases:
-        assert converter.to_latin(case[1]) == case[0]
+        assert converter.to_latin(case[1]).lower() == case[0].lower()
 
 
 def test_letter_coverage():
@@ -94,13 +94,15 @@ def test_letter_coverage():
     cases = _read_test_cases()
     missing_letters = []
     latin_cases = " ".join([case[0] for case in cases]).lower()
-    for letter in latin_alphabet:
+    for letter in sorted(latin_alphabet, key=lambda x: len(x), reverse=True):
         if letter not in latin_cases:
             missing_letters.append(letter)
+        latin_cases = latin_cases.replace(letter, "")
     cyrillic_cases = " ".join([case[1] for case in cases]).lower()
-    for letter in cyrillic_alphabet:
+    for letter in sorted(cyrillic_alphabet, key=lambda x: len(x), reverse=True):
         if letter not in cyrillic_cases:
             missing_letters.append(letter)
+        cyrillic_cases = cyrillic_cases.replace(letter, "")
     if len(missing_letters) > 0:
         raise Exception(f"'{missing_letters}' not found in test dataset!")
 
