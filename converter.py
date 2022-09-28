@@ -40,8 +40,22 @@ def to_latin(text):
         "ы": "ı",
         "ь": "",
         "э": "e",
-        "ю": "yu",
+        "ю": "ü",
         "я": "ya",
+        "ку": "kü",  #  non-letter replacements starts here
+        "узю": "üzü",
+        "ур": "ür",
+        "ля": "lâ",
+        "уту": "utu",
+        "ие": "iye",
+        "ко": "kö",
+        "мю": "mü",
+        "ол": "öl",
+        "къу": "qu",
+        "cю": "sü",
+        "ёкъ": "yoq",
+        "юв": "yuv",
+        "уз": "üz",
     }
 
     for key in sorted(cyrillic_mapping.keys(), key=lambda x: len(x), reverse=True):
