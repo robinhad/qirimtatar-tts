@@ -1,4 +1,5 @@
 import converter
+from tabulate import tabulate
 
 
 def test_cyrillic_converter():
@@ -9,9 +10,18 @@ def test_cyrillic_converter():
 
 def test_latin_converter():
     cases = _read_test_cases()
-    print(cases)
+    failed = []
     for case in cases:
-        assert converter.to_latin(case[1]).lower() == case[0].lower()
+        if converter.to_latin(case[1]).lower() != case[0].lower():
+            failed.append(
+                (case[1].lower(), converter.to_latin(case[1]).lower(), case[0].lower())
+            )
+    if len(failed) > 0:
+        failed_rows = "\n".join([str(item) for item in failed])
+        raise Exception(
+            f"Failed {len(failed)}/{len(cases)} ({round((len(failed)/len(cases))*100,2)}%) cases.\n"
+            + tabulate(failed, headers=["Original", "Converted", "Ground truth"])
+        )
 
 
 def test_letter_coverage():
