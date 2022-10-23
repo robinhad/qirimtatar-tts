@@ -1,7 +1,5 @@
 name: Python CI Build
 
-name: Python package
-
 on: [push]
 
 jobs:
