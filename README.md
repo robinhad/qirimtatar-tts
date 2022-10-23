@@ -1,3 +1,14 @@
+---
+title: Qirimli Tts
+emoji: 🦀
+colorFrom: gray
+colorTo: red
+sdk: gradio
+sdk_version: 3.6
+app_file: app.py
+pinned: false
+---
+
 # qirimli-tts
 Text-to-Speech for Crimean Tatar language
 
