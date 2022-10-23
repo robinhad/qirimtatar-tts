@@ -1,6 +1,7 @@
 # qirimli-tts
 Text-to-Speech for Crimean Tatar language
 
+![pytest](https://github.com/robinhad/qirimli-tts/actions/workflows/tests.yml/badge.svg)
 
 # Attibution
 
