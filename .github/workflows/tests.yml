@@ -31,6 +31,7 @@ jobs:
         run: |
           pytest
       - name: Code Coverage Report
+        if: always()
         uses: irongut/CodeCoverageSummary@v1.3.0
         with:
           filename: /**/coverage.xml
