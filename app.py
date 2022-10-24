@@ -1,11 +1,16 @@
+from unittest import result
 import gradio as gr
 from crh_transliterator.transliterator import transliterate
 from crh_preprocessor.preprocessor import preprocess
+from datetime import datetime
 
 
 def tts(text: str) -> str:
-    text = transliterate(text)
-    text = preprocess(text)
+    result = transliterate(text)
+    text = preprocess(result)
+    print("============================")
+    print("Original text:", text)
+    print("Time:", datetime.utcnow())
     return text
 
 
