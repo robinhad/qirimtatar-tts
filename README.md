@@ -9,7 +9,7 @@ app_file: app.py
 pinned: false
 ---
 
-# qirimli-tts
+# Crimean Tatar (Qirimli) TTS
 Text-to-Speech for Crimean Tatar language
 
 ![pytest](https://github.com/robinhad/qirimli-tts/actions/workflows/tests.yml/badge.svg) 

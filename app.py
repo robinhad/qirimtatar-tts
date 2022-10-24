@@ -9,6 +9,14 @@ def tts(text: str) -> str:
     return text
 
 
+badge = (
+    "https://visitor-badge-reloaded.herokuapp.com/badge?page_id=robinhad.qirimli-tts"
+)
+
+with open("README.md") as file:
+    article = file.read()
+    article = article[article.find("---\n", 4) + 5 : :]
+
 iface = gr.Interface(
     fn=tts,
     inputs=[
@@ -23,5 +31,6 @@ iface = gr.Interface(
         ["Sağlıqnen qalıñız! Sağlıqnen barıñız! "],
         ["Селям! Ишлер насыл?"],
     ],
+    article=article + f'\n  <center><img src="{badge}" alt="visitors badge"/></center>',
 )
 iface.launch()
