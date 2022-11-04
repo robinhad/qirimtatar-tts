@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+# Model files
+config.json
+speakers.pth
+model.pth

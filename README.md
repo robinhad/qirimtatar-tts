@@ -19,4 +19,7 @@ Online demo: https://huggingface.co/spaces/robinhad/qirimli-tts
 
 # Attribution
 
-Transliteration: [prosvita/crh.transliteration](https://github.com/prosvita/crh.transliteration)  
+- Model training - [Yurii Paniv @robinhad](https://github.com/robinhad)   
+- Crimean Tatar dataset - [Yehor Smoliakov @egorsmkv](https://github.com/egorsmkv)   
+- Huge thanks for voice to: Nuri, Arslan, Kemal  
+- Transliteration: [prosvita/crh.transliteration](https://github.com/prosvita/crh.transliteration)  
