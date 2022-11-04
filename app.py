@@ -71,7 +71,7 @@ iface = gr.Interface(
     ],
     outputs=[
         gr.components.Audio(label="Output"),
-        gr.components.Textbox(label="Наголошений текст"),
+        gr.components.Textbox(label="Оброблений текст"),
     ],
     title="Кримськотатарський синтез мовлення",
     description="Кримськотатарський Text-to-Speech за допомогою Coqui TTS",
