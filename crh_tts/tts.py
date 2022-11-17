@@ -13,6 +13,7 @@ class Voices(Enum):
     Arslan = "arslan"
     Nuri = "nuri"
     Kemal = "kemal"
+    Abibulla = "abibulla"
 
 
 class TTS:

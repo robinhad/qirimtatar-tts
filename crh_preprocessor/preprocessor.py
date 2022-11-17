@@ -1,15 +1,26 @@
 import re
 
-mappings = [
-    ["\u0069\u0307", "i"],  # ["i̇", "i"], handle i with dot, first occurence is two separate symbols
-]
+mapping = {
+    "n\u0303": "\xf1",
+    "g\u0306": "\u011f",
+    "i\u0307": "i",
+    "u\u0308": "\xfc",
+    "o\u0308": "\xf6",
+    "\xe7": "\u04ab",
+    "c\u0327": "\u04ab",
+    "s\u0327": "\u015f",
+    "a\u0302": "\xe2",
+    "w": "v",
+    "x": "ks"
+}
+ 
 
 def preprocess(text):
     text = text.lower()  # always treat lowercase
     text = " " + text + " "
 
-    for mapping in mappings:
-        text = re.sub(mapping[0], mapping[1], text)
+    for symbol in mapping.keys():
+        text = re.sub(symbol, mapping[symbol], text)
 
     numbers = {
         "0": "sıfır",
