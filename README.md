@@ -1,5 +1,5 @@
 ---
-title: Qirimli Tts
+title: Qirimtatar Tts
 emoji: 🦀
 colorFrom: gray
 colorTo: red
@@ -9,13 +9,13 @@ app_file: app.py
 pinned: false
 ---
 
-# Crimean Tatar (Qirimli) TTS
+# Crimean Tatar (Qirimtatar) TTS
 Text-to-Speech for Crimean Tatar language
 
-![pytest](https://github.com/robinhad/qirimli-tts/actions/workflows/tests.yml/badge.svg) [![Open In HF🤗 Space ](https://img.shields.io/badge/Open%20Demo-%F0%9F%A4%97%20Space-yellow)](https://huggingface.co/spaces/robinhad/qirimli-tts)
+![pytest](https://github.com/robinhad/qirimtatar-tts/actions/workflows/tests.yml/badge.svg) [![Open In HF🤗 Space ](https://img.shields.io/badge/Open%20Demo-%F0%9F%A4%97%20Space-yellow)](https://huggingface.co/spaces/robinhad/qirimtatar-tts)
 
-Source code: https://github.com/robinhad/qirimli-tts  
-Online demo: https://huggingface.co/spaces/robinhad/qirimli-tts  
+Source code: https://github.com/robinhad/qirimtatar-tts  
+Online demo: https://huggingface.co/spaces/robinhad/qirimtatar-tts  
 You're welcome to join UA Speech Recognition and Synthesis community: Telegram https://t.me/speech_recognition_uk  
 
 ## Examples

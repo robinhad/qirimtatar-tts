@@ -21,7 +21,7 @@ print(f"CUDA available? {is_available()}")
 
 
 badge = (
-    "https://visitor-badge-reloaded.herokuapp.com/badge?page_id=robinhad.qirimli-tts"
+    "https://visitor-badge-reloaded.herokuapp.com/badge?page_id=robinhad.qirimtatar-tts"
 )
 
 crh_tts = TTS(use_cuda=is_available())

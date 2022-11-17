@@ -52,9 +52,9 @@ class TTS:
         """Downloads models and stores them into `cache_folder`. By default stores in current directory."""
         print("downloading uk/crh/vits-tts")
         release_number = "v0.0.1"
-        model_link = f"https://github.com/robinhad/qirimli-tts/releases/download/{release_number}/model.pth"
-        config_link = f"https://github.com/robinhad/qirimli-tts/releases/download/{release_number}/config.json"
-        speakers_link = f"https://github.com/robinhad/qirimli-tts/releases/download/{release_number}/speakers.pth"
+        model_link = f"https://github.com/robinhad/qirimtatar-tts/releases/download/{release_number}/model.pth"
+        config_link = f"https://github.com/robinhad/qirimtatar-tts/releases/download/{release_number}/config.json"
+        speakers_link = f"https://github.com/robinhad/qirimtatar-tts/releases/download/{release_number}/speakers.pth"
 
         cache_folder = "."
 
