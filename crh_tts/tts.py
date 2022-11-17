@@ -52,7 +52,7 @@ class TTS:
     def __setup_cache(self, use_cuda=False):
         """Downloads models and stores them into `cache_folder`. By default stores in current directory."""
         print("downloading uk/crh/vits-tts")
-        release_number = "v0.0.1"
+        release_number = "v0.0.2"
         model_link = f"https://github.com/robinhad/qirimtatar-tts/releases/download/{release_number}/model.pth"
         config_link = f"https://github.com/robinhad/qirimtatar-tts/releases/download/{release_number}/config.json"
         speakers_link = f"https://github.com/robinhad/qirimtatar-tts/releases/download/{release_number}/speakers.pth"
