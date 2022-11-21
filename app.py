@@ -15,7 +15,7 @@ class VoiceOption(Enum):
     Sevil = "Севіль (жіночий) 👩"
     #Arslan = "Арслан (чоловічий) 👨"
     Eskandar = "Ескандер (чоловічий) 👨"
-    #Abibulla = "Абібулла (чоловічий) 👨"
+    # Abibulla = "Абібулла (чоловічий) 👨"
 
 
 print(f"CUDA available? {is_available()}")
