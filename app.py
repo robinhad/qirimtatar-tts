@@ -13,9 +13,9 @@ from torch.cuda import is_available
 
 class VoiceOption(Enum):
     Nuri = "Севіль (жіночий) 👩"
-    Arslan = "Арслан (чоловічий) 👨"
+    #Arslan = "Арслан (чоловічий) 👨"
     Kemal = "Ескандер (чоловічий) 👨"
-    Abibulla = "Абібулла (чоловічий) 👨"
+    #Abibulla = "Абібулла (чоловічий) 👨"
 
 
 print(f"CUDA available? {is_available()}")
@@ -36,9 +36,9 @@ def tts(text: str, voice: str):
 
     voice_mapping = {
         VoiceOption.Nuri.value: Voices.Nuri.value,
-        VoiceOption.Arslan.value: Voices.Arslan.value,
+        #VoiceOption.Arslan.value: Voices.Arslan.value,
         VoiceOption.Kemal.value: Voices.Kemal.value,
-        VoiceOption.Abibulla.value: Voices.Abibulla.value,
+        #VoiceOption.Abibulla.value: Voices.Abibulla.value,
     }
 
     speaker_name = voice_mapping[voice]
@@ -82,10 +82,10 @@ iface = gr.Interface(
         ["Selâm! İşler nasıl?", VoiceOption.Kemal.value],
         [
             "Qırımtatarlar üç subetnik gruppasından er birisiniñ (tatlar, noğaylar ve yalıboylular) öz şivesi bar.",
-            VoiceOption.Arslan.value,
+            VoiceOption.Nuri.value,
         ],
         ["Селям! Ишлер насыл?", VoiceOption.Nuri.value],
-        ["Selâm! 123456789", VoiceOption.Abibulla.value],
+        ["Selâm! 123456789", VoiceOption.Kemal.value],
     ],
 )
 iface.launch()
