@@ -1,6 +1,9 @@
 name: Python CI Build
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
