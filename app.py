@@ -12,9 +12,9 @@ from torch.cuda import is_available
 
 
 class VoiceOption(Enum):
-    Nuri = "Севіль (жіночий) 👩"
+    Sevil = "Севіль (жіночий) 👩"
     #Arslan = "Арслан (чоловічий) 👨"
-    Kemal = "Ескандер (чоловічий) 👨"
+    Eskandar = "Ескандер (чоловічий) 👨"
     #Abibulla = "Абібулла (чоловічий) 👨"
 
 
@@ -35,9 +35,9 @@ def tts(text: str, voice: str):
     print("Time:", datetime.utcnow())
 
     voice_mapping = {
-        VoiceOption.Nuri.value: Voices.Nuri.value,
+        VoiceOption.Sevil.value: Voices.Sevil.value,
         #VoiceOption.Arslan.value: Voices.Arslan.value,
-        VoiceOption.Kemal.value: Voices.Kemal.value,
+        VoiceOption.Eskandar.value: Voices.Eskandar.value,
         #VoiceOption.Abibulla.value: Voices.Abibulla.value,
     }
 

@@ -10,10 +10,10 @@ from torch import no_grad
 class Voices(Enum):
     """List of available voices for the model."""
 
-    Arslan = "arslan"
-    Nuri = "nuri"
-    Kemal = "kemal"
-    Abibulla = "abibulla"
+    #Arslan = "arslan"
+    Sevil = "sevil"
+    Eskandar = "eskandar"
+    #Abibulla = "abibulla"
 
 
 class TTS:
