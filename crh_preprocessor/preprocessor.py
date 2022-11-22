@@ -22,6 +22,10 @@ def preprocess(text):
     for symbol in mapping.keys():
         text = re.sub(symbol, mapping[symbol], text)
 
+    separators = "?!" # TODO: add proper symbols to tts
+    for symbol in separators:
+        text = text.replace(symbol, ".")
+
     numbers = {
         "0": "sıfır",
         "1": "bir",

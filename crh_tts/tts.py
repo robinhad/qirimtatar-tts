@@ -12,7 +12,7 @@ class Voices(Enum):
 
     #Arslan = "arslan"
     Sevil = "sevil"
-    Eskandar = "eskandar"
+    Eskander = "eskander"
     #Abibulla = "abibulla"
 
 

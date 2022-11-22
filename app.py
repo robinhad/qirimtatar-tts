@@ -14,7 +14,7 @@ from torch.cuda import is_available
 class VoiceOption(Enum):
     Sevil = "Севіль (жіночий) 👩"
     #Arslan = "Арслан (чоловічий) 👨"
-    Eskandar = "Ескандер (чоловічий) 👨"
+    Eskander = "Ескандер (чоловічий) 👨"
     # Abibulla = "Абібулла (чоловічий) 👨"
 
 
@@ -37,7 +37,7 @@ def tts(text: str, voice: str):
     voice_mapping = {
         VoiceOption.Sevil.value: Voices.Sevil.value,
         #VoiceOption.Arslan.value: Voices.Arslan.value,
-        VoiceOption.Eskandar.value: Voices.Eskandar.value,
+        VoiceOption.Eskander.value: Voices.Eskander.value,
         #VoiceOption.Abibulla.value: Voices.Abibulla.value,
     }
 
@@ -68,7 +68,7 @@ iface = gr.Interface(
         gr.components.Radio(
             label="Голос",
             choices=[option.value for option in VoiceOption],
-            value=VoiceOption.Nuri.value,
+            value=VoiceOption.Sevil.value,
         ),
     ],
     outputs=[
@@ -79,13 +79,13 @@ iface = gr.Interface(
     description="Кримськотатарський Text-to-Speech за допомогою Coqui TTS",
     article=article + f'\n  <center><img src="{badge}" alt="visitors badge"/></center>',
     examples=[
-        ["Selâm! İşler nasıl?", VoiceOption.Kemal.value],
+        ["Selâm! İşler nasıl?", VoiceOption.Eskander.value],
         [
             "Qırımtatarlar üç subetnik gruppasından er birisiniñ (tatlar, noğaylar ve yalıboylular) öz şivesi bar.",
-            VoiceOption.Nuri.value,
+            VoiceOption.Sevil.value,
         ],
-        ["Селям! Ишлер насыл?", VoiceOption.Nuri.value],
-        ["Selâm! 123456789", VoiceOption.Kemal.value],
+        ["Селям! Ишлер насыл?", VoiceOption.Sevil.value],
+        ["Selâm! 123456789", VoiceOption.Eskander.value],
     ],
 )
 iface.launch()
