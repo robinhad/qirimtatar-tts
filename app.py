@@ -1,3 +1,8 @@
+from os import getenv
+from queue import Queue
+from threading import Thread
+from time import sleep
+from data_logger import log_data
 import gradio as gr
 from crh_transliterator.transliterator import transliterate
 from crh_preprocessor.preprocessor import preprocess
@@ -17,6 +22,27 @@ class VoiceOption(Enum):
     Eskander = "Ескандер (чоловічий) 👨"
     # Abibulla = "Абібулла (чоловічий) 👨"
 
+
+def check_thread(logging_queue: Queue):
+    logging_callback = log_data(hf_token=getenv("HF_API_TOKEN"), dataset_name="crh-tts-output", private=False)
+    while True:
+        sleep(60)
+        batch = []
+        while not logging_queue.empty():
+            batch.append(logging_queue.get())
+
+        if len(batch) > 0:
+            try:
+                logging_callback(batch)
+            except:
+                print("Error happened while pushing data to HF. Puttting items back in queue...")
+                for item in batch:
+                    logging_queue.put(item)
+
+if getenv("HF_API_TOKEN") is not None:
+    log_queue = Queue()
+    t = Thread(target=check_thread, args=(log_queue,))
+    t.start()
 
 print(f"CUDA available? {is_available()}")
 
@@ -42,6 +68,8 @@ def tts(text: str, voice: str):
     }
 
     speaker_name = voice_mapping[voice]
+    if getenv("HF_API_TOKEN") is not None:
+        log_queue.put([text, speaker_name, str(datetime.utcnow())])
     text_limit = 7200
     text = (
         text if len(text) < text_limit else text[0:text_limit]

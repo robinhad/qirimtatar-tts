@@ -18,6 +18,7 @@ Text-to-Speech for Crimean Tatar language
 Source code: https://github.com/robinhad/qirimtatar-tts  
 Online demo: https://huggingface.co/spaces/robinhad/qirimtatar-tts  
 You're welcome to join UA Speech Recognition and Synthesis community: Telegram https://t.me/speech_recognition_uk  
+Note: demo input is saved to improve Text-to-Speech engine and demo experience. By using this demo you give your consent to this.  
 
 ## Examples
 Test sentence:
