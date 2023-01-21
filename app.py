@@ -18,13 +18,15 @@ from torch.cuda import is_available
 
 class VoiceOption(Enum):
     Sevil = "Севіль (жіночий) 👩"
-    #Arslan = "Арслан (чоловічий) 👨"
+    # Arslan = "Арслан (чоловічий) 👨"
     Eskander = "Ескандер (чоловічий) 👨"
     # Abibulla = "Абібулла (чоловічий) 👨"
 
 
 def check_thread(logging_queue: Queue):
-    logging_callback = log_data(hf_token=getenv("HF_API_TOKEN"), dataset_name="crh-tts-output", private=False)
+    logging_callback = log_data(
+        hf_token=getenv("HF_API_TOKEN"), dataset_name="crh-tts-output", private=False
+    )
     while True:
         sleep(60)
         batch = []
@@ -35,9 +37,12 @@ def check_thread(logging_queue: Queue):
             try:
                 logging_callback(batch)
             except:
-                print("Error happened while pushing data to HF. Puttting items back in queue...")
+                print(
+                    "Error happened while pushing data to HF. Puttting items back in queue..."
+                )
                 for item in batch:
                     logging_queue.put(item)
+
 
 if getenv("HF_API_TOKEN") is not None:
     log_queue = Queue()
@@ -62,9 +67,9 @@ def tts(text: str, voice: str):
 
     voice_mapping = {
         VoiceOption.Sevil.value: Voices.Sevil.value,
-        #VoiceOption.Arslan.value: Voices.Arslan.value,
+        # VoiceOption.Arslan.value: Voices.Arslan.value,
         VoiceOption.Eskander.value: Voices.Eskander.value,
-        #VoiceOption.Abibulla.value: Voices.Abibulla.value,
+        # VoiceOption.Abibulla.value: Voices.Abibulla.value,
     }
 
     speaker_name = voice_mapping[voice]
@@ -114,6 +119,7 @@ iface = gr.Interface(
         ],
         ["Селям! Ишлер насыл?", VoiceOption.Sevil.value],
         ["Selâm! 123456789", VoiceOption.Eskander.value],
+        ["Selâm! 1,2,3,4,5,6,789", VoiceOption.Eskander.value],
     ],
 )
 iface.launch()
